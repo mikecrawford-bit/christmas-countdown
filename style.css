@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0a4d26; /* Deep Festive Green */
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#snowCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    width: min(86vw, 680px);
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.countdown-box {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.time-segment {
+    display: flex;
+    flex-direction: column;
+    min-width: 80px;
+}
+
+.time-segment span {
+    font-size: 3.5rem;
+    color: #ff4d4d; /* Festive Red */
+    text-shadow: 2px 2px 0px white;
+}
+
+.time-segment label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.message {
+    font-size: 1.6rem;
+    color: #ffd700; /* Gold */
+    height: 2.5rem;
+}
+
+#magic-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-family: 'Fredoka One', cursive;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background 0.2s;
+}
+
+#magic-btn:hover {
+    transform: scale(1.05);
+    background: #ff3333;
+}
+
+#magic-btn:active {
+    transform: scale(0.95);
+}
+
+#santa-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+}
+
+.santa-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#santa-img {
+    width: 320px;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* The dance lives in the animated GIF itself, so the CSS only adds a soft lift. */
+.santa-dancing {
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.4));
+}
+
+@media (max-width: 700px) {
+    .container { width: 92vw; padding: 26px 14px; }
+    .title { font-size: 1.7rem; margin-bottom: 14px; }
+    .countdown-box { gap: 6px; margin-bottom: 18px; }
+    .time-segment { min-width: 58px; }
+    .time-segment span { font-size: 2rem; }
+    .message { font-size: 1.1rem; height: auto; min-height: 1.6rem; }
+    #magic-btn { font-size: 1.1rem; padding: 12px 20px; }
+    #santa-container { right: 8px; bottom: 8px; }
+    #santa-img { width: 150px; border-radius: 14px; }
+}

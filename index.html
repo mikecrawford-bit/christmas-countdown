@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>River's Christmas Countdown</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#0a4d26">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="River's Countdown">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎄</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="snowCanvas"></canvas>
+
+    <div class="container">
+        <h1 class="title">🎄 Christmas Countdown 🎄</h1>
+        
+        <div class="countdown-box">
+            <div class="time-segment">
+                <span id="days">00</span>
+                <label>Days</label>
+            </div>
+            <div class="time-segment">
+                <span id="hours">00</span>
+                <label>Hours</label>
+            </div>
+            <div class="time-segment">
+                <span id="minutes">00</span>
+                <label>Mins</label>
+            </div>
+            <div class="time-segment">
+                <span id="seconds">00</span>
+                <label>Secs</label>
+            </div>
+        </div>
+
+        <h2 id="message" class="message"></h2>
+
+        <button id="magic-btn">✨ Start the Magic! ✨</button>
+    </div>
+
+    <!-- Santa lives outside the frosted card: a backdrop-filter ancestor becomes the containing
+         block for fixed children, which pinned him over the countdown instead of the screen corner. -->
+    <div id="santa-container" class="santa-hidden">
+        <img id="santa-img" src="uploads/santa-christmas-spirit.gif" alt="Dancing Santa">
+    </div>
+
+    <!-- One player for the whole set: iOS Safari only unlocks audio reliably on a single
+         element that was started by a real tap, so every song reuses it. -->
+    <audio id="player" preload="metadata" playsinline></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
